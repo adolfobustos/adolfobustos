@@ -115,6 +115,7 @@ nav.navegacion {
     width: 100%;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 nav.navegacion.show {
@@ -352,10 +353,6 @@ div.carrete img.zoom:hover {
 
     aside.polaroid img {
         max-width: 200px;
-    }
-
-    div.carrete img {
-        max-width: 300px;
     }
 }
 
