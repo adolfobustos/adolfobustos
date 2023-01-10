@@ -22,7 +22,7 @@ h1, h2, h3, h4, p {
 }
 
 h1 {
-    font-family: 'Lobster Two', cursive;
+    font-family: 'Caveat', cursive;
     font-size: 50px;
     letter-spacing: 4px;
     font-weight: bold;
@@ -69,6 +69,15 @@ a:hover {
     color: white;
 }
 
+span {
+    font-size: 19px;
+    font-weight: bold;
+    padding: 10px 15px;
+    color: blue;
+    text-decoration: underline;
+    text-align: center;
+}
+
 .contenedor {
     display: flex;
     width: 100%;
@@ -85,6 +94,12 @@ header {
     margin-inline: 20px;
     background-color: #1CB5E0;
     background: linear-gradient(to right, #1CB5E0, #ffffff);
+}
+
+#img-header {
+    width: 300px;
+    height: auto;
+    top: 0px;
 }
 
 h4 {
@@ -179,20 +194,30 @@ figcaption a {
     padding: 10px 15px;
     color: blue;
     text-align: center;
-    border-radius: 20px;
-    border: 2px solid #bfbfbf;
-    background-color: rgb(255, 255, 255, 0.5);
 }
 
 figcaption a:hover {
     color: blue;
     text-decoration: underline;
-    background-color: rgb(255, 255, 255, 0.8);
 }
 
 img {
     width: 100%;
     height: auto;
+}
+
+div.card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-top: 5px solid #bfbfbf;
+    align-items: center;
+}
+
+div.carrete {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
 }
 
 div.certificados {
@@ -204,12 +229,18 @@ div.certificados {
 }
 
 aside.polaroid {
-    display: none;
+    display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: 300px;
+}
+
+div.carrete img {
+    max-width: 200px;
+    max-height: auto;
+    margin: 20px;
 }
 
 div.certificados img {
@@ -234,40 +265,15 @@ aside.polaroid img {
     transition: transform .2s;
 }
 
+div.carrete img.zoom:hover {
+    transform: scale(2);
+}
+
 div.certificados img.zoom:hover {
     transform: scale(2);
 }
 
 aside.polaroid img.zoom:hover {
-    transform: scale(2);
-}
-
-#img-header {
-    width: 300px;
-    height: auto;
-    top: 0px;
-}
-
-div.card {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-    text-align: center;
-    border-top: 5px solid #bfbfbf;
-}
-
-div.carrete {
-    border-radius: 20px;
-    background: rgb(0, 0, 0, 0.3);
-}
-
-div.carrete img {
-    max-width: 200px;
-    max-height: auto;
-    margin: 20px;
-}
-
-div.carrete img.zoom:hover {
     transform: scale(2);
 }
 
@@ -302,6 +308,10 @@ div.carrete img.zoom:hover {
 
     .redes {
         flex-direction: row;
+        justify-content: center;
+    }
+
+    div.carrete {
         justify-content: center;
     }
 
@@ -393,11 +403,11 @@ div.carrete img.zoom:hover {
         margin: 20px;
     }
 
-    div.certificados img {
+    div.carrete img {
         max-width: 400px;
     }
 
-    div.carrete img {
+    div.certificados img {
         max-width: 400px;
     }
 }
