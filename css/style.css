@@ -212,6 +212,7 @@ div.card {
     margin-bottom: 25px;
     border-top: 5px solid #bfbfbf;
     align-items: center;
+    text-align: center;
 }
 
 div.carrete {
