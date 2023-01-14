@@ -230,7 +230,7 @@ div.certificados {
     margin-top: 20px;
 }
 
-aside.polaroid {
+aside.marco {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -252,15 +252,9 @@ div.certificados img {
     margin-inline: 20px;
 }
 
-aside.polaroid img {
+aside.marco img {
     max-width: 150px;
     max-height: auto;
-    padding: 10px;
-    padding-bottom: 20px;
-    margin: 10px;
-    background-color: white;
-    border: 1px solid #bfbfbf;
-    box-shadow: 10px 10px 30px black;
 }
 
 .zoom {
@@ -275,8 +269,25 @@ div.certificados img.zoom:hover {
     transform: scale(2);
 }
 
-aside.polaroid img.zoom:hover {
-    transform: scale(2);
+.border {
+    border: 2px solid #e9c46a;
+    border-radius: 20px;
+    position: relative;
+    margin: 10px;
+}
+
+.border:before,
+.border:after {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border: 3px solid #0000;
+    border-image: linear-gradient(-45deg, #e76f51 30%, #0000 0 70%, #f4a261 0) 10;
+}
+
+.border:after {
+    inset: -20px;
+    border-image: linear-gradient(-45deg, #619b8a 20%, #0000 0 80%, #619b8a 0) 10;
 }
 
 @media (min-width: 800px) and (orientation: landscape) {
@@ -324,7 +335,7 @@ aside.polaroid img.zoom:hover {
         justify-content: center;
     }
 
-    aside.polaroid {
+    aside.marco {
         display: flex;
         justify-content: center;
     }
@@ -364,7 +375,7 @@ aside.polaroid img.zoom:hover {
         max-width: 300px;
     }
 
-    aside.polaroid img {
+    aside.marco img {
         max-width: 200px;
     }
 }
