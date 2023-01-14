@@ -193,6 +193,7 @@ figcaption a {
     font-weight: bold;
     padding: 10px 15px;
     color: blue;
+    text-decoration: underline;
     text-align: center;
 }
 
@@ -314,6 +315,7 @@ aside.polaroid img.zoom:hover {
 
     div.carrete {
         justify-content: center;
+        overflow-x: auto;
     }
 
     div.certificados {
@@ -413,9 +415,10 @@ aside.polaroid img.zoom:hover {
     }
 }
 
-/* ANIMACION BORDE */
+/* ANIMATION HEADER */
 :root {
     --angle: 45deg;
+    --opacity: 0.5;
 }
 
 *,
@@ -424,23 +427,40 @@ aside.polaroid img.zoom:hover {
     box-sizing: border-box;
 }
 
-.border {
+.animation-header {
     --border-size: 5px;
-    border: var(--border-size) solid transparent;
-
-    border-image: conic-gradient(from var(--angle),
+    border-radius: 20px;
+    border: var(--border-size) dotted transparent;
+    background-image: linear-gradient(to right,
+            rgb(255 255 255 / var(--opacity)),
+            rgb(255 255 255 / var(--opacity))),
+        conic-gradient(from var(--angle),
             #FCBF81 0deg 90deg,
             #F8997C 90deg 180deg,
             #E55600 180deg 270deg,
-            #00A99D 270deg 360deg) 1 stretch;
+            #00A99D 270deg 360deg);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
 @supports (background: paint(houdini)) {
+
+    @property --opacity {
+        syntax: "<number>";
+        initial-value: 0.5;
+        inherits: false;
+    }
 
     @property --angle {
         syntax: "<angle>";
         initial-value: 0deg;
         inherits: false;
+    }
+
+    @keyframes opacityChange {
+        to {
+            --opacity: 1;
+        }
     }
 
     @keyframes rotate {
@@ -449,7 +469,7 @@ aside.polaroid img.zoom:hover {
         }
     }
 
-    .border {
-        animation: rotate 4s linear infinite;
+    .animation-header {
+        animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
     }
 }
