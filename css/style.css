@@ -113,9 +113,10 @@ header a {
     color: black;
 }
 
+/*
 .btn_menu {
     clear: both;
-}
+} */
 
 nav {
     max-width: 400px;
@@ -124,16 +125,17 @@ nav {
 }
 
 nav.navegacion {
-    display: none;
+    display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+/*
 nav.navegacion.show {
     display: flex;
-}
+} */
 
 ul {
     position: relative;
@@ -151,12 +153,13 @@ ul li a {
     position: relative;
     text-decoration: none;
     font-family: 'poppins', sans-serif;
+    font-weight: bold;
     font-size: 30px;
     letter-spacing: 2px;
     line-height: 1, 15;
     text-transform: uppercase;
     color: transparent;
-    -webkit-text-stroke: 1px rgb(255, 255, 255, 0.5);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
 }
 
 button {
@@ -322,17 +325,19 @@ div.certificados img.zoom:hover {
         flex-direction: row;
     }
 
+    /*
     .btn_menu {
         display: none;
-    }
+    } */
 
     nav {
         max-width: 800px;
     }
 
+    /*
     nav.navegacion {
         display: flex;
-    }
+    } */
 
     ul li a:hover {
         color: transparent;
@@ -497,10 +502,9 @@ div.certificados img.zoom:hover {
     border-image: linear-gradient(-45deg, #619b8a 20%, #0000 0 80%, #619b8a 0) 10;
 }
 
-/* ANIMATION HEADER */
+/* ANIMATION BORDER */
 :root {
-    --angle: 0deg;
-    --opacity: 0.5;
+    --angle: 45deg;
 }
 
 *,
@@ -509,18 +513,15 @@ div.certificados img.zoom:hover {
     box-sizing: border-box;
 }
 
-.animation-header {
+.animation-border {
     --border-size: 5px;
-    border-radius: 20px;
-    border: var(--border-size) dotted transparent;
-    background-image: linear-gradient(to right,
-            rgb(255 255 255 / var(--opacity)),
-            rgb(255 255 255 / var(--opacity))),
-        conic-gradient(from var(--angle),
-            #55b1a5 0deg 180deg,
-            #2a9d8f 180deg 360deg);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border: var(--border-size) solid transparent;
+
+    border-image: conic-gradient(from var(--angle),
+            #92cdc5 0deg 90deg,
+            #77c1b7 90deg 180deg,
+            #55b1a5 180deg 270deg,
+            #2a9d8f 270deg 360deg) 1 stretch;
 }
 
 @supports (background: paint(houdini)) {
@@ -537,7 +538,7 @@ div.certificados img.zoom:hover {
         }
     }
 
-    .animation-header {
+    .animation-border {
         animation: rotate 4s linear infinite;
     }
 }
@@ -599,4 +600,4 @@ div.certificados img.zoom:hover {
     .animation-header {
         animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
     }
-}*/
+} */
